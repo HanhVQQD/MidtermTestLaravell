@@ -20,26 +20,26 @@
                 </tr>
                 </thead>
                 <tbody>
-                {{-- @foreach($products as $pr) --}}
+                @foreach($products as $pr)
                 <tr class="productsListAdmin">
-                    <th scope="row">1</th>
-                    <td>1</td>
-                    <th><img src="1" alt="image" style="height: 100px;" /></th>
-                    <td>d</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <th scope="row">{{$pr->id}}</th>
+                    <td>{{$pr->name}}</td>
+                    <th><img src="../../../public/Images/Products/{{$pr->image}}" alt="image" style="height: 100px;" /></th>
+                    <td>{{$pr->price}}</td>
+                    <td>{{$pr->promotionPrice}}</td>
+                    <td>{{$pr->description}}</td>
+                    <td>{{$pr->quantity}}</td>
+                    <td>{{$pr->id_type}}</td>
                     <td>
-                    <a href='1' class="editBtn" type="submit" style="width:80px;">Edit</a>
-                    <form role="form" action="" method="post">
+                    <a href='formAdminEdit/{{$pr->id}}' class="editBtn" type="submit" style="width:80px;">Edit</a>
+                    <form role="form" action="adminDelete/{{$pr->id}}" method="post">
                         @csrf
                         <button name="delete" class="deleteBtn" type="submit" style="width:80px;">Delete</button>
                     </form>
                     </td>
 
                 </tr>
-                {{-- @endforeach --}}
+                @endforeach
                 </tbody>
             </table>
         <div class="space50">&nbsp;</div>

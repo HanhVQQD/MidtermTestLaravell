@@ -11,7 +11,8 @@ class FormController extends Controller
 {
 
     public function getIndexAdmin(){
-        return view('AdminPages.index');
+        $products = DB::table('products')->get();
+        return view('AdminPages.index', compact('products'));
     }
 
     public function postAdd (FormAddFroductRequest $request){
@@ -34,6 +35,6 @@ class FormController extends Controller
 
 
     public function getAdd(){
-        return view('AdminPages.add');
+        return view('AdminPages.formAdd');
     }
 }
