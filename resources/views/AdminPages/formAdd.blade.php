@@ -32,7 +32,7 @@
                             $('#image').change(function() {
                                 let reader = new FileReader();
                                 reader.onload = (e) => {
-                                    $('#preview-image-before-upload').attr('src', e.target.result);
+                                    $('#preview-image-before-upload').attr('src,jpeg,png,jpg,gif,svg', e.target.result);
                                 }
                                 reader.readAsDataURL(this.files[0]);
                             });
@@ -42,12 +42,18 @@
 
                 <div class="mb-3">
                     <label for='price'>Price</label>
-                    <input type="number" class="form-control" name="price" id="price" placeholder="Enter price"  >
+                    <input type="number" class="form-control" name="price" id="price" placeholder="Enter price">
+                    @error('price')
+                        <small style="color: red" class="help-block">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label for='promotionPrice'>Promotion Price</label>
                     <input type="number"  class="form-control" name="promotionPrice" id="promotionPrice" placeholder="Enter promotion price">
+                    @error('promotionPrice')
+                        <small style="color: red" class="help-block">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -56,19 +62,25 @@
                     <script>
                         CKEDITOR.replace('description');
                     </script>
+                    @error('description')
+                        <small style="color: red" class="help-block">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label for='quantity'>Quantity</label>
-                    <input type="number" min=0 class="form-control" name="quantity" id="quantity" placeholder="Enter quantity"  >
+                    <input type="number" min=0 class="form-control" name="quantity" id="quantity" placeholder="Enter quantity">
+                    @error('quantity')
+                        <small style="color: red" class="help-block">{{$message}}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label for='id_type'>Id Type</label>
                     <input type="text" class="form-control" name="id_type" id="id_type" placeholder="Id type"  >
-                </div>
-                <div>
-                    @include('../error')
+                    @error('id_type')
+                        <small style="color: red" class="help-block">{{$message}}</small>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

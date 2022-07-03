@@ -11,3 +11,7 @@ Route::post('/formAdd', [FormController::class, 'postAdd']);
 
 // ---------------------------------------------------------------------------------
 Route::get('/',[HomePageController::class,'getIndexHomePage']);
+
+Route::get('/type/{id}', [ HomePageController::class, 'getProduct_type' ]);	
+
+Route::get('/productDetail/{id}', [ HomePageController::class, 'getDetail_product' ]);	

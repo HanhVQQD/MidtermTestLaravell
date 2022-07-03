@@ -1,0 +1,15 @@
+.rowDetail{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 5%;
+}
+
+.imageLeft{
+    max-width: 20%;
+    max-height: 50%;
+    box-shadow: 50px;
+}
+
+.price{
+    color: red;
+}

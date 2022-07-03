@@ -25,7 +25,7 @@ class FormAddFroductRequest extends FormRequest
     {
         return [
             'name'=>'required|max:300|string',
-            'image'=>'required|filled|image|mimes:jpeg,png,jpg,gif,svg|max:25000',
+            'image'=>'required|filled|mimes:jpeg,png,jpg,gif,svg|max:25000',
             'price'=>'required|numeric|min:1',
             'promotionPrice'=>'required|numeric|min:1',
             'description'=>'string',
@@ -42,7 +42,6 @@ class FormAddFroductRequest extends FormRequest
             'image.required'=>'Bạn chưa chọn ảnh',
             'image.filled'=>'Bạn chưa chọn ảnh',
             'image.max'=>'Kích thước ảnh tối đa là 25Mb',
-            'image.image'=>'File bạn upload không phải ảnh',
             'price.required'=>'Bạn chưa nhập giá',
             'price.min'=>'Giá sản phẩm phải lớn hơn 1đ',
             'price.min'=>'Giá cũ sản phẩm phải lớn hơn 1đ',
